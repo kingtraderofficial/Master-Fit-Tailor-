@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MasterFit Tailor - Muhammad Islam | Lahore</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --dark: #1A1209;
+    --dark2: #2A1F0E;
+    --cream: #F5EDD8;
+    --cream2: #FDF7EC;
+    --text: #3D2E10;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito', sans-serif; background: var(--cream2); color: var(--text); }
+
+  /* NAVBAR */
+  nav {
+    background: var(--dark);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 0;
+  }
+  .logo-placeholder {
+    width: 56px; height: 56px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    background: var(--dark2);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .logo-text { color: var(--white); }
+  .logo-text h1 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); }
+  .logo-text p { font-size: 11px; color: #aaa; letter-spacing: 2px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { color: #ccc; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--dark); padding: 10px 24px; border-radius: 4px; font-weight: 700; font-size: 14px; cursor: pointer; border: none; transition: background 0.3s; }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 50%, #3D2810 100%);
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 700px; padding: 40px 20px; }
+  .hero-badge { display: inline-block; background: rgba(201,168,76,0.15); border: 1px solid var(--gold); color: var(--gold); padding: 6px 20px; border-radius: 20px; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; }
+  .hero h2 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 6vw, 68px); color: var(--white); line-height: 1.15; margin-bottom: 20px; }
+  .hero h2 span { color: var(--gold); }
+  .hero p { color: #bbb; font-size: 17px; line-height: 1.7; margin-bottom: 36px; }
+  .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: var(--dark); padding: 14px 36px; border-radius: 4px; font-weight: 700; font-size: 15px; border: none; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-block; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--white); padding: 14px 36px; border-radius: 4px; font-weight: 700; font-size: 15px; border: 2px solid rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-block; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* STATS */
+  .stats {
+    background: var(--dark);
+    display: flex; justify-content: center; flex-wrap: wrap;
+    gap: 0;
+  }
+  .stat-item { padding: 28px 50px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
+  .stat-item:last-child { border-right: none; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--gold); font-weight: 700; }
+  .stat-label { color: #888; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+
+  /* SECTION */
+  .section { padding: 80px 40px; max-width: 1300px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 60px; }
+  .section-badge { display: inline-block; background: rgba(201,168,76,0.1); color: var(--gold); padding: 5px 16px; border-radius: 20px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); color: var(--dark); margin-bottom: 14px; }
+  .section-header p { color: #888; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+  /* TABS */
+  .tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 50px; border: 2px solid var(--gold); border-radius: 6px; overflow: hidden; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .tab-btn { flex: 1; padding: 14px 24px; background: transparent; border: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; color: var(--gold); cursor: pointer; transition: all 0.3s; border-right: 2px solid var(--gold); }
+  .tab-btn:last-child { border-right: none; }
+  .tab-btn.active { background: var(--gold); color: var(--dark); }
+  .tab-btn:hover:not(.active) { background: rgba(201,168,76,0.1); }
+
+  /* GRID */
+  .sample-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* CARD */
+  .sample-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    transition: all 0.35s;
+    cursor: pointer;
+    position: relative;
+  }
+  .sample-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.14); }
+  .card-img {
+    width: 100%; height: 240px;
+    background: linear-gradient(135deg, #f0e6d0, #e8d8bb);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img-placeholder {
+    text-align: center;
+    color: #b89a60;
+  }
+  .card-img-placeholder .img-icon { font-size: 48px; margin-bottom: 8px; }
+  .card-img-placeholder p { font-size: 12px; color: #c4a96e; }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; }
+  .save-btn {
+    position: absolute; top: 12px; right: 12px;
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.9);
+    border: none; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 18px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .save-btn.saved { background: #e74c3c; color: white; }
+  .save-btn:hover { transform: scale(1.1); }
+  .card-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--gold); color: var(--dark);
+    padding: 3px 10px; border-radius: 3px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+  }
+  .card-body { padding: 18px; }
+  .card-body h3 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--dark); margin-bottom: 6px; }
+  .card-body p { font-size: 13px; color: #888; line-height: 1.6; margin-bottom: 14px; }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; }
+  .price { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); font-weight: 700; }
+  .order-btn { background: var(--dark); color: var(--white); border: none; padding: 8px 16px; border-radius: 4px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 12px; cursor: pointer; transition: background 0.3s; }
+  .order-btn:hover { background: var(--gold); color: var(--dark); }
+
+  /* COMING SOON */
+  .coming-soon {
+    text-align: center; padding: 100px 20px;
+    background: var(--white); border-radius: 16px;
+    border: 2px dashed var(--gold);
+  }
+  .coming-soon .cs-icon { font-size: 72px; margin-bottom: 20px; }
+  .coming-soon h3 { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--dark); margin-bottom: 12px; }
+  .coming-soon p { color: #888; font-size: 16px; }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--white);
+    border-radius: 16px;
+    max-width: 600px; width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: modalIn 0.3s ease;
+  }
+  @keyframes modalIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .modal-img {
+    width: 100%; height: 280px;
+    background: linear-gradient(135deg, #f0e6d0, #e8d8bb);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .modal-img img { width: 100%; height: 100%; object-fit: cover; }
+  .modal-close {
+    position: absolute; top: 14px; right: 14px;
+    background: rgba(0,0,0,0.5); color: white;
+    border: none; width: 36px; height: 36px;
+    border-radius: 50%; font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .modal-body { padding: 28px; }
+  .modal-body h2 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--dark); margin-bottom: 8px; }
+  .modal-price { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--gold); font-weight: 700; margin-bottom: 16px; }
+  .modal-desc { color: #666; line-height: 1.8; margin-bottom: 20px; font-size: 14px; }
+  .modal-details { background: var(--cream2); border-radius: 8px; padding: 16px; margin-bottom: 24px; }
+  .modal-details h4 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 10px; }
+  .detail-row { display: flex; gap: 8px; font-size: 13px; color: #555; margin-bottom: 6px; }
+  .detail-row span:first-child { font-weight: 700; min-width: 120px; color: var(--dark); }
+  .modal-actions { display: flex; gap: 12px; }
+  .modal-order-btn { flex: 1; background: var(--gold); color: var(--dark); border: none; padding: 14px; border-radius: 6px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; cursor: pointer; transition: background 0.3s; }
+  .modal-order-btn:hover { background: var(--gold-light); }
+  .modal-save-btn { background: transparent; color: var(--dark); border: 2px solid #ddd; padding: 14px 20px; border-radius: 6px; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 15px; cursor: pointer; transition: all 0.3s; }
+  .modal-save-btn.saved { background: #e74c3c; color: white; border-color: #e74c3c; }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--dark);
+    padding: 80px 40px;
+    text-align: center;
+  }
+  .contact-section h2 { font-family: 'Playfair Display', serif; color: var(--white); font-size: clamp(28px, 4vw, 42px); margin-bottom: 14px; }
+  .contact-section h2 span { color: var(--gold); }
+  .contact-section > p { color: #aaa; max-width: 500px; margin: 0 auto 50px; }
+  .contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; max-width: 900px; margin: 0 auto; }
+  .contact-card { background: var(--dark2); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 28px; min-width: 200px; text-align: center; }
+  .contact-icon { font-size: 30px; margin-bottom: 10px; }
+  .contact-card h4 { color: var(--gold); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .contact-card p, .contact-card a { color: #ccc; font-size: 14px; text-decoration: none; line-height: 1.6; }
+  .contact-card a:hover { color: var(--gold); }
+
+  /* ORDER FORM */
+  .order-form-section { background: var(--cream); padding: 70px 40px; }
+  .order-form { max-width: 600px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.1); }
+  .order-form h3 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--dark); margin-bottom: 24px; text-align: center; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; border: 1.5px solid #e0d5c0; border-radius: 6px; font-family: 'Nunito', sans-serif; font-size: 14px; color: var(--dark); transition: border-color 0.3s; background: var(--cream2); }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--gold); }
+  .form-group textarea { height: 100px; resize: vertical; }
+  .submit-btn { width: 100%; background: var(--gold); color: var(--dark); border: none; padding: 15px; border-radius: 6px; font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; cursor: pointer; transition: background 0.3s; margin-top: 8px; }
+  .submit-btn:hover { background: var(--gold-light); }
+
+  /* FOOTER */
+  footer { background: #0F0B04; padding: 24px 40px; text-align: center; color: #555; font-size: 13px; }
+  footer span { color: var(--gold); }
+
+  /* SAVED PANEL */
+  .saved-panel {
+    position: fixed; right: -380px; top: 0; bottom: 0;
+    width: 360px;
+    background: var(--white);
+    box-shadow: -8px 0 40px rgba(0,0,0,0.2);
+    z-index: 8888;
+    transition: right 0.4s ease;
+    display: flex; flex-direction: column;
+  }
+  .saved-panel.open { right: 0; }
+  .saved-header { background: var(--dark); padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; }
+  .saved-header h3 { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 20px; }
+  .saved-close { background: none; border: none; color: #aaa; font-size: 22px; cursor: pointer; }
+  .saved-list { flex: 1; overflow-y: auto; padding: 20px; }
+  .saved-item { display: flex; gap: 12px; padding: 14px; border-radius: 8px; background: var(--cream2); margin-bottom: 12px; align-items: center; }
+  .saved-item-img { width: 60px; height: 60px; background: linear-gradient(135deg, #f0e6d0, #e8d8bb); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+  .saved-item-info { flex: 1; }
+  .saved-item-info h4 { font-size: 14px; color: var(--dark); font-weight: 700; margin-bottom: 3px; }
+  .saved-item-info p { font-size: 13px; color: var(--gold); font-weight: 700; }
+  .remove-saved { background: none; border: none; color: #ccc; font-size: 18px; cursor: pointer; }
+  .remove-saved:hover { color: #e74c3c; }
+  .saved-empty { text-align: center; padding: 60px 20px; color: #aaa; }
+  .saved-fab {
+    position: fixed; bottom: 30px; right: 30px;
+    background: var(--gold); color: var(--dark);
+    border: none; border-radius: 50px;
+    padding: 14px 24px; font-family: 'Nunito', sans-serif;
+    font-weight: 700; font-size: 14px; cursor: pointer;
+    box-shadow: 0 8px 24px rgba(201,168,76,0.4);
+    display: flex; align-items: center; gap: 8px;
+    z-index: 7777; transition: transform 0.3s;
+  }
+  .saved-fab:hover { transform: scale(1.05); }
+  .saved-fab .count { background: var(--dark); color: var(--gold); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+
+  /* IMAGE FILENAME HINT */
+  .img-filename { font-size: 10px; color: #bbb; margin-top: 4px; font-style: italic; }
+
+  @media (max-width: 768px) {
+    nav { flex-direction: column; padding: 16px 20px; gap: 12px; }
+    .nav-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .section { padding: 60px 20px; }
+    .stat-item { padding: 20px 30px; }
+    .contact-section { padding: 60px 20px; }
+    .order-form-section { padding: 60px 20px; }
+    .order-form { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo-area">
+    <div class="logo-placeholder">MF</div>
+    <div class="logo-text">
+      <h1>MasterFit Tailor</h1>
+      <p>Est. Lahore · Premium Stitching</p>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#samples" class="active">Samples</a></li>
+    <li><a href="#order">Order Now</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://www.tiktok.com/@masterfittailor" target="_blank">TikTok</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openOrder()">📞 Book Now</button>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✂️ Premium Custom Stitching · Lahore</div>
+    <h2>Crafted to <span>Perfection</span><br>Fitted for <span>You</span></h2>
+    <p>Professional tailoring by Muhammad Islam at MasterFit Tailor. Suits, shirts, and traditional wear — all hand-crafted with precision and pride in Lahore.</p>
+    <div class="hero-btns">
+      <a href="#samples" class="btn-primary">Browse Samples</a>
+      <a href="tel:03064391353" class="btn-outline">📞 Call Us</a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">Happy Clients</div></div>
+  <div class="stat-item"><div class="stat-num">10+</div><div class="stat-label">Years Experience</div></div>
+  <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">Design Styles</div></div>
+  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Custom Fit</div></div>
+</div>
+
+<!-- SAMPLES SECTION -->
+<div id="samples">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-badge">Our Collection</div>
+      <h2>Explore Our Designs</h2>
+      <p>Browse our curated collection of suits, shirts, and traditional wear. Save your favourites and order anytime.</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('suit')">👘 Suits</button>
+      <button class="tab-btn" onclick="showTab('shirt')">👔 Shirts</button>
+      <button class="tab-btn" onclick="showTab('shop')">🏪 Shop</button>
+    </div>
+
+    <!-- SUITS TAB -->
+    <div id="tab-suit" class="tab-content active">
+      <div class="sample-grid" id="suit-grid"></div>
+    </div>
+
+    <!-- SHIRTS TAB -->
+    <div id="tab-shirt" class="tab-content">
+      <div class="sample-grid" id="shirt-grid"></div>
+    </div>
+
+    <!-- SHOP TAB -->
+    <div id="tab-shop" class="tab-content">
+      <div class="coming-soon">
+        <div class="cs-icon">🏪</div>
+        <h3>Shop Coming Soon</h3>
+        <p>We are working on something great! Our ready-to-wear shop will launch soon.<br>Stay tuned and follow us on TikTok for updates.</p>
+        <br>
+        <a href="https://www.tiktok.com/@masterfittailor" target="_blank" class="btn-primary">Follow on TikTok</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER FORM -->
+<div class="order-form-section" id="order">
+  <div class="section-header" style="margin-bottom:40px;">
+    <div class="section-badge">Place Your Order</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:36px;color:var(--dark);margin-bottom:10px;">Order a Custom Design</h2>
+    <p style="color:#888;">Fill the form below and Muhammad Islam will contact you shortly.</p>
+  </div>
+  
